@@ -3,27 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fintech login-page</title>
-    
-<body>
+    <title>Fintech Login Page</title>
     <link rel="stylesheet" href="login.css">
+</head>
+<body>
     <section>
-        <div class="container">
+        <div class="form-container">
             <div class="form-box" id="login-page">
-                <form action="">
-                    <h2>Welcome User! to <i>Fintech</i> Login page</h2>
-                    <li>*Enter Username </li>
-                    <input type="text" placeholder="*Enter Username" required>
-                    <li>*Enter your password</li>
-                    <input type="password" placeholder="*Enter your password" required> 
-                    <li>*Tick here to validate your credentials<br><input type="checkbox"required></li>
-                    <button onclick="SubmitEvent">submit</button>
-                    <br>forget password, click <a href="registaration.html">password</a>
+                <form id="loginForm" action="/api/login" method="POST">
+                    <h2>Welcome to <i>Fintech</i> Login</h2>
+                    
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username"
+                            placeholder="Enter your username" 
+                            required
+                            minlength="3"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="Enter your password" 
+                            required
+                            minlength="6"
+                        >
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input 
+                            type="checkbox" 
+                            id="remember" 
+                            name="remember"
+                        >
+                        <label for="remember">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit</button>
+
+                    <div class="forgot-password">
+                        Forgot password? <a href="password-reset.html">Reset here</a>
+                    </div>
                 </form>
-
             </div>
-
         </div>
     </section>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            // Basic validation
+            if (username.length < 3) {
+                alert('Username must be at least 3 characters long');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long');
+                return;
+            }
+
+            // Here you would send the data to your backend
+            console.log('Form submitted:', { username, password });
+            
+            // Example: Uncomment to send to your backend
+            // fetch('/api/login', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({ username, password })
+            // })
+            // .then(response => response.json())
+            // .then(data => console.log('Success:', data))
+            // .catch((error) => console.error('Error:', error));
+        });
+    </script>
 </body>
-</html> 
+</html>
