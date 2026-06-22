@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fintech Registration page</title>
+    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="reg.js">
+    <script src="reg.js"></script>
+</head>
+<body>
+    <section>
+        <div class="form-container">
+            <div class="form-box" id="registration-page">
+                 <form id="Registrationform" action="/api/login" method="POST">
+                    <h2> Welcome! to Fintech registration-page</h2>
+
+                    <div class="form-group">
+                        <label for="fullname">Full Name *</label>
+                            <input
+                            type="text"
+                            id="fullname"
+                            placeholder="Enter your full names as per your ID"
+                            required>
+                        
+                    </div>
+
+                     <div class="form-group">
+                        <label for="email">Email address *</label>
+                            <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required>
+                        
+                    </div>
+
+                     <div class="form-group">
+                        <label for="number">Phone Number *</label>
+                            <input
+                            type="number"
+                            id="number"
+                            placeholder="07xxxxxxx"
+                            required>
+                        
+                    </div>
+
+                     <div class="form-group">
+                        <label for="country">Country Name *</label>
+                            <input
+                            type="text"
+                            id="name"
+                            placeholder="South Africa"
+                            required>
+                        
+                    </div>
+
+                     <div class="form-group">
+                        <label for="name">Choose your Level of Education *</label>
+                            <select name="Education" id="Level">
+                                <option value="zero-level"> </option>
+                                <option value="lower-level">Primary Level</option>
+                                <option value="average-level">Secendary Level</option>
+                                <option value="high-level">Tertiary Level</option>
+                                 
+                            </select>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="name">What is your hobby</label>
+                            <input
+                            type="text"
+                            id="name"
+                            placeholder="Write your hobby"
+                            required>
+                        
+                    </div>
+
+                     <div class="form-group">
+                        <label for="password">Enter your password *</label>
+                            <input
+                            type="password"
+                            id="password"
+                            placeholder="your password is required"
+                            required>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Confirm your password *</label>
+                            <input
+                            type="password"
+                            id="confirm"
+                            placeholder="Confirm your password"
+                            required>
+                        
+                    </div>
+                    
+                    <div class="form-group">
+                            <input
+                            type="checkbox"
+                            id="checkbox"
+                            required>
+                            <label for="aggrement">By checking the box above, it shows that you have read and 
+                                 have accepted the <a href="terms and conditions">terms and conditions</a>
+                                  of  Fintech organization. 
+                            </label>
+                    </div>
+                <button type="submit" class="btn-submit">Submit</button>
+             </form>
+        </div>
+    </section>
+</body>
+</html>
